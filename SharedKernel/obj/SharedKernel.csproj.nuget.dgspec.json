@@ -46,11 +46,26 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.0.1, )",
+              "versionCentrallyManaged": true
+            },
             "Meziantou.Analyzer": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.56, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )",
               "versionCentrallyManaged": true
             },
             "Microsoft.CodeAnalysis.BannedApiAnalyzers": {
@@ -124,7 +139,10 @@
             "coverlet.collector": "[6.0.0, )",
             "coverlet.msbuild": "[6.0.0, )",
             "FluentAssertions.Analyzers": "[0.17.5, )",
+            "MediatR": "[12.0.1, )",
             "Meziantou.Analyzer": "[2.0.56, )",
+            "Microsoft.AspNetCore.Http.Abstractions": "[2.2.0, )",
+            "Microsoft.AspNetCore.Mvc.Core": "[2.2.5, )",
             "Microsoft.CodeAnalysis.BannedApiAnalyzers": "[3.3.4, )",
             "Microsoft.CodeAnalysis.NetAnalyzers": "[7.0.1, )",
             "Microsoft.Extensions.Caching.Abstractions": "[7.0.0, )",
