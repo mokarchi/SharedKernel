@@ -1,0 +1,86 @@
+<Project>
+  <PropertyGroup>
+    <LangVersion>11.0</LangVersion>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <!--
+      CA2007: Consider calling ConfigureAwait on the awaited task
+      MA0004: Use Task.ConfigureAwait(false) as the current SynchronizationContext is not needed
+      CA1056: Change the type of property 'Url' from 'string' to 'System.Uri'
+      CA1054: Change the type of parameter of the method to allow a Uri to be passed as a 'System.Uri' object
+      CA1055: Change the return type of method from 'string' to 'System.Uri'
+    -->
+    <NoWarn>
+      $(NoWarn);SCS0004;CA1716;CA2227;CA1002;MA0025;MA0002;CA2000;SCS0016;CA1707;CA5404;CA1815;
+      CA1805;CA1031;SCS0008;SCS0009;MA0039;S4830;CA1724;CA1051;S2259;MA0004;VSTHRD111;
+    </NoWarn>
+    <NoError>
+      $(NoError);SCS0004;CA1716;CA2227;CA1002;MA0025;MA0002;CA2000;SCS0016;CA1707;CA5404;CA1815;
+      CA1805;CA1031;SCS0008;SCS0009;MA0039;S4830;CA1724;CA1051;S2259;MA0004;VSTHRD111;
+    </NoError>
+    <ReportAnalyzer>true</ReportAnalyzer>
+    <AnalysisMode>All</AnalysisMode>
+    <Features>strict</Features>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+
+  </PropertyGroup>
+
+  <!-- third-party analyzers -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+
+    <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" >
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+
+    <PackageReference Include="Microsoft.CodeAnalysis.BannedApiAnalyzers" >
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+
+    <PackageReference Include="Roslynator.Analyzers" >
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+
+    <PackageReference Include="Roslynator.CodeAnalysis.Analyzers">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+
+    <PackageReference Include="Roslynator.Formatting.Analyzers">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+
+    <PackageReference Include="SonarAnalyzer.CSharp">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+
+    <PackageReference Include="Meziantou.Analyzer">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+
+    <PackageReference Include="SecurityCodeScan.VS2019">
+       <PrivateAssets>all</PrivateAssets>
+       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="$(MSBuildThisFileDirectory)BannedSymbols.txt" Link="Properties/BannedSymbols.txt" />
+    <Compile Include="$(MSBuildThisFileDirectory)/AssemblyInfo.cs" Link="Properties/AssemblyInfo.common.cs" />
+  </ItemGroup>
+</Project>
