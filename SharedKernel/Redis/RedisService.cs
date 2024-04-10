@@ -55,6 +55,7 @@ public class RedisService : IRedisService
             };
             await _distributedCache.SetStringAsync(key, value, options);
             return;
+            
         }
 
         await _distributedCache.SetStringAsync(key, value);
