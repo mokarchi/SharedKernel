@@ -22,7 +22,7 @@
     <PackageVersion Include="Roslynator.CodeAnalysis.Analyzers" Version="4.13.1" />
     <PackageVersion Include="Roslynator.Formatting.Analyzers" Version="4.13.1" />
     <PackageVersion Include="SonarAnalyzer.CSharp" Version="10.7.0.110445" />
-    <PackageVersion Include="Meziantou.Analyzer" Version="2.0.188" />
+    <PackageVersion Include="Meziantou.Analyzer" Version="2.0.189" />
     <PackageVersion Include="SecurityCodeScan.VS2019" Version="5.6.7" />
   </ItemGroup>
 </Project>
